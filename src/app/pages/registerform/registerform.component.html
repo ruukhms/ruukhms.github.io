@@ -1,0 +1,72 @@
+<div class="container">
+    <form [formGroup]="registerform"  class="border p-3 rounded-3" >
+      <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+          <span class="fs-3"> Donor Registitration Form</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="username" class="form-label"> Your fullname</label>
+          <input type="text" class="form-control" id="username" formControlName="fullname">
+          
+          
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="col mb-3">
+          <label for="Company" class="form-label"> Organazation/Company From</label>
+          <input type="text" class="form-control" id="email" formControlName="company">
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="email" class="form-label"> Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+          
+        </div>
+        <div class="col mb-3">
+          <label for="phone" class="form-label"> Phone</label>
+          <input type="tel" class="form-control" id="number" formControlName="phone">
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="name" class="form-label">Type of Donation</label>
+          <input type="text" class="form-control" id="name" formControlName="typeofdonation">
+          
+        </div>
+        <div class="col mb-3">
+          <label for="name" class="form-label">Place to donation</label>
+          <input type="text" class="form-control" id="number" formControlName="placedonation">
+        </div>
+        
+      </div>
+     
+      <div class="row">
+        <div class="col-6 offset-3">
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary" (click)="regUser()">REGISTER DONOR</button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div class="d-flex justify-content-center links">
+        See list of Donor <a routerLink="/listofregister">   Donors</a>
+        </div>
+      </div>
+     
+  
+    </form>
+    
+  </div>
+  
+  
+  
+  
+  
+  
