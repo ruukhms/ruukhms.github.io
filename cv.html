@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CV</title>
+    <style>
+    .map{
+        margin: auto;
+        margin-left: 25%;
+
+    }
+    form{
+        width: 50%;
+        background: rgb(36, 195, 207);
+        margin: auto;
+     }
+    </style>
+</head>
+<body style ="background-color: aquamarine;">
+    
+
+    
+    <div class="containerC">
+        <div class="map">
+            <div style="width: 100%"><iframe width="60%" height="400" frameborder="0" scrolling="no" marginheight="0" margin-left="20px" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=zanzibar,jumbi+(cv)&amp;t=k&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe></div>
+        </div>
+        
+        <div class="contact">
+           <center><h2>CONTACT </h2></center>
+           <form id="formContact">
+                <label for="">Name</label><br>
+                <input type="text" id="name" required="" placeholder="Enter Name"><br><br>
+                <label for="">Email</label><br>
+                <input type="email" id="email" required="" placeholder="Enter Email"><br><br>
+                <label for="">Address</label><br>
+                <input type="text" id="address" required="" placeholder="Enter Address"><br><br>
+                <label for="">Comments</label><br>
+                <textarea id="comment" cols="30" width="90%" rows="5"></textarea><br><br>
+                <button type="submit" id="submit">Save</button>
+           </form>
+        </div>
+    </div>
+
+    <form id ="login">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password"><br>
+
+        <input type="submit" value="submit">
+    </form>   
+</body>
+ 
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        let name = document.querySelector('#name');
+        let email = document.querySelector('#email');
+        let namei = document.querySelector('#namei');
+        let emaili = document.querySelector('#emaili');
+        let address = document.querySelector('#address');
+        let comment= document.querySelector('#comment');
+        let error= document.querySelector('#error');
+    
+        namei.textContent = localStorage.getItem('name');
+        emaili.textContent = localStorage.getItem('email');
+        comment.textContent = localStorage.getItem('comment');
+        address.textContent = localStorage.getItem('address');
+    
+        document.querySelector('#formLogin').onsubmit = ()=>{
+           
+             if((name.value) ===(localStorage.getItem('name')) && (email.value) ===(localStorage.getItem('email'))){
+             
+             window.location.href = 'login.html';
+             }else{
+                 error.textContent = "black";
+                 error.style.color = 'green';
+             }
+             return false;
+         }
+    });
+    
+    document.addEventListener('DOMContentLoaded',()=>{
+        let name = document.querySelector('#name');
+        let email = document.querySelector('#email');
+        let address = document.querySelector('#address');
+        let comment= document.querySelector('#comment');
+        document.querySelector('#formContact').onsubmit = ()=>{
+             //Save to local Storage
+             localStorage.setItem('name',name.value);
+             localStorage.setItem('email',email.value);
+             localStorage.setItem('address',address.value);
+             localStorage.setItem('comment',comment.value);
+             //Redirect to login form
+             window.location.href = 'login.html';
+             return false;
+        }
+    });
+    
+</script>
+ 
+  
+
+
+
+</html>
+    
+
+
+
